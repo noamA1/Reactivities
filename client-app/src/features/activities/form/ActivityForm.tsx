@@ -49,7 +49,7 @@ export default observer(function ActivityForm() {
         id: uuid(),
       };
       createActivity(newActivity).then(() => {
-        navigate(`/activities/${activity.id}`);
+        navigate(`/activities/${newActivity.id}`);
       });
     } else {
       updateActivity(activity).then(() => {
