@@ -1,0 +1,24 @@
+# fly.toml app configuration file generated for reactivities-course-noam on 2023-09-26T18:55:55+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "reactivities-course-noam"
+primary_region = "cdg"
+
+[build]
+  image = "noama1990/reactivities:latest"
+
+[env]
+  ASPNETCORE_URLS="http://+:8080"
+  Cloudinary__CloudName = "dtqql0oko"
+  Cloudinary__ApiKey = "744898449651912"
+
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
